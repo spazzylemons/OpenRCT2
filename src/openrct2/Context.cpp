@@ -1335,7 +1335,11 @@ namespace OpenRCT2
 
         void SetTimeScale(float newScale) override
         {
-            _timeScale = std::clamp(newScale, GAME_MIN_TIME_SCALE, GAME_MAX_TIME_SCALE);
+            // Timescale must be positive and finite
+            if (newScale > 0.0f && newScale < std::numeric_limits<float>::infinity())
+            {
+                _timeScale = newScale;
+            }
         }
 
         float GetTimeScale() const override

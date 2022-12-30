@@ -186,9 +186,6 @@ namespace
     constexpr float GAME_UPDATE_MAX_THRESHOLD = GAME_UPDATE_TIME_MS * GAME_MAX_UPDATES;
 }; // namespace
 
-constexpr float GAME_MIN_TIME_SCALE = 0.1f;
-constexpr float GAME_MAX_TIME_SCALE = 5.0f;
-
 void ContextInit();
 void ContextSetCurrentCursor(CursorID cursor);
 void ContextUpdateCursorScale();
